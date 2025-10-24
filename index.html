@@ -5,45 +5,256 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Chef Picks | Best Amazon Kitchen Tools</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #ff7f50;
       --secondary: #fff5ec;
+      --accent: #ffbfa3;
       --dark: #2b2b2b;
       --light: #fff;
     }
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    body{background:var(--light);color:var(--dark);}
-    header{padding:1.5rem 8%;display:flex;justify-content:space-between;align-items:center;background:var(--light);position:sticky;top:0;z-index:10;border-bottom:1px solid #eee;}
-    header h1{font-weight:600;font-size:1.5rem;color:var(--dark);}
-    header nav a{margin-left:1rem;text-decoration:none;color:var(--dark);font-weight:500;transition:0.3s;}
-    header nav a:hover{color:var(--primary);}
-    .hero{height:70vh;background:url('https://images.pexels.com/photos/5591711/pexels-photo-5591711.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;color:#fff;position:relative;}
-    .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.45);}
-    .hero-content{position:relative;z-index:2;max-width:700px;}
-    .hero h2{font-size:2.7rem;margin-bottom:1rem;font-weight:600;}
-    .hero p{font-size:1.1rem;opacity:0.9;}
-    .section{padding:4rem 8%;}
-    .section h2{text-align:center;font-size:2rem;margin-bottom:0.5rem;}
-    .section p.section-sub{text-align:center;color:#555;margin-bottom:2.5rem;}
-    .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:2rem;}
-    .product{background:var(--secondary);border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.06);transition:0.3s;}
-    .product:hover{transform:translateY(-6px);}
-    .product img{width:100%;height:210px;object-fit:cover;}
-    .product-info{padding:1.2rem;}
-    .product-info h3{font-size:1.2rem;margin-bottom:0.4rem;font-weight:600;}
-    .product-info p{font-size:0.9rem;color:#555;margin-bottom:0.8rem;}
-    .product-info a{display:inline-block;background:var(--primary);color:#fff;padding:0.6rem 1.2rem;border-radius:6px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:0.3s;}
-    .product-info a:hover{background:#ff6a33;}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    header {
+      padding: 1.5rem 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--light);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #eee;
+    }
+
+    header h1 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    header nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    header nav a:hover {
+      color: var(--primary);
+    }
+
+    /* HERO */
+    .hero {
+      height: 75vh;
+      background: url('https://images.pexels.com/photos/4109993/pexels-photo-4109993.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 0 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 4rem 8%;
+      background: var(--secondary);
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .section p.section-sub {
+      text-align: center;
+      color: #555;
+      margin-bottom: 2.5rem;
+    }
+
+    /* PRODUCTS */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .product {
+      background: var(--light);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1.3rem;
+      text-align: center;
+    }
+
+    .product-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .product-info p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .product-info a {
+      background: var(--primary);
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .product-info a:hover {
+      background: #ff6633;
+    }
+
     /* CONTACT */
-    .contact-box{max-width:600px;margin:0 auto;background:var(--secondary);padding:2rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);}
-    .contact-box form{display:flex;flex-direction:column;}
-    .contact-box input,.contact-box textarea{padding:0.8rem;margin-bottom:1rem;border:1px solid #ccc;border-radius:6px;font-size:0.9rem;}
-    .contact-box button{background:var(--primary);color:#fff;border:none;padding:0.8rem;border-radius:6px;font-weight:500;cursor:pointer;transition:0.3s;}
-    .contact-box button:hover{background:#ff6a33;}
-    footer{background:#111;color:#ccc;text-align:center;padding:2rem 8%;margin-top:3rem;font-size:0.9rem;}
+    .contact-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--light);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-box form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-box input,
+    .contact-box textarea {
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .contact-box button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-box button:hover {
+      background: #ff6633;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 8%;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* 📱 Responsive Design for Mobile */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 1rem 5%;
+      }
+
+      .hero {
+        height: 60vh;
+      }
+
+      .hero h2 {
+        font-size: 1.9rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .products-grid {
+        gap: 1.2rem;
+      }
+
+      .product-info h3 {
+        font-size: 1rem;
+      }
+
+      .section {
+        padding: 2.5rem 5%;
+      }
+
+      footer {
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -57,68 +268,49 @@
 <section class="hero">
   <div class="hero-content">
     <h2>Top-Rated Amazon Kitchen Tools For Smart Cooking</h2>
-    <p>We don’t sell products — we recommend the best Amazon kitchen tools that make cooking easier, faster, and more enjoyable.</p>
+    <p>We don’t sell — we recommend smart, high-quality tools loved by home chefs worldwide.</p>
   </div>
 </section>
 
 <section class="section" id="products">
   <h2>Our Best Amazon Picks</h2>
-  <p class="section-sub">Carefully selected and highly-rated kitchen products trusted by home chefs.</p>
+  <p class="section-sub">Handpicked and highly rated kitchen tools that make cooking easier and more enjoyable.</p>
 
   <div class="products-grid">
 
-    <!-- PRODUCT TEMPLATE - COPY 6 TIMES -->
     <div class="product">
-      <img src="PUT_IMAGE_URL" alt="Kitchen Product">
+      <img src="https://m.media-amazon.com/images/I/61dzf0UDknL._AC_SL1500_.jpg" alt="Product 1">
       <div class="product-info">
-        <h3>Product Name Here</h3>
-        <p>Short benefit-based description why this tool is valuable.</p>
-        <a href="#" target="_blank">View on Amazon</a>
+        <h3>Stainless Steel Measuring Spoons Set</h3>
+        <p>Durable, accurate, and stylish — perfect for precise cooking and baking.</p>
+        <a href="https://amzn.to/47q1Vpv" target="_blank">View on Amazon</a>
       </div>
     </div>
 
     <div class="product">
-      <img src="PUT_IMAGE_URL" alt="Kitchen Product">
+      <img src="https://m.media-amazon.com/images/I/61A5Vyz5q5L._AC_SL1500_.jpg" alt="Product 2">
       <div class="product-info">
-        <h3>Product Name Here</h3>
-        <p>Short benefit-based description why this tool is valuable.</p>
-        <a href="#" target="_blank">View on Amazon</a>
+        <h3>Non-Stick Frying Pan</h3>
+        <p>Professional-grade pan with even heat distribution and easy clean-up.</p>
+        <a href="https://amzn.to/47q1RpL" target="_blank">View on Amazon</a>
       </div>
     </div>
 
     <div class="product">
-      <img src="PUT_IMAGE_URL" alt="Kitchen Product">
+      <img src="https://m.media-amazon.com/images/I/71Zb7FucphL._AC_SL1500_.jpg" alt="Product 3">
       <div class="product-info">
-        <h3>Product Name Here</h3>
-        <p>Short benefit-based description why this tool is valuable.</p>
-        <a href="#" target="_blank">View on Amazon</a>
+        <h3>Adjustable Spice Rack Organizer</h3>
+        <p>Space-saving and elegant — keep your kitchen tidy and accessible.</p>
+        <a href="https://amzn.to/3WglYl1" target="_blank">View on Amazon</a>
       </div>
     </div>
 
     <div class="product">
-      <img src="PUT_IMAGE_URL" alt="Kitchen Product">
+      <img src="https://m.media-amazon.com/images/I/61dzf0UDknL._AC_SL1500_.jpg" alt="Product 4">
       <div class="product-info">
-        <h3>Product Name Here</h3>
-        <p>Short benefit-based description why this tool is valuable.</p>
-        <a href="#" target="_blank">View on Amazon</a>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="PUT_IMAGE_URL" alt="Kitchen Product">
-      <div class="product-info">
-        <h3>Product Name Here</h3>
-        <p>Short benefit-based description why this tool is valuable.</p>
-        <a href="#" target="_blank">View on Amazon</a>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="PUT_IMAGE_URL" alt="Kitchen Product">
-      <div class="product-info">
-        <h3>Product Name Here</h3>
-        <p>Short benefit-based description why this tool is valuable.</p>
-        <a href="#" target="_blank">View on Amazon</a>
+        <h3>Premium Kitchen Knife Set</h3>
+        <p>Sharp, ergonomic, and rust-resistant knives for every cooking task.</p>
+        <a href="https://amzn.to/4hbzdwK" target="_blank">View on Amazon</a>
       </div>
     </div>
 
@@ -134,7 +326,7 @@
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Describe your issue..." required></textarea>
+      <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </div>
