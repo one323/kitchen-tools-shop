@@ -5,336 +5,321 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Chef Picks | Best Amazon Kitchen Tools</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
   <style>
-    :root {
+    :root{
       --primary: #ff7f50;
       --secondary: #fff5ec;
       --accent: #ffbfa3;
       --dark: #2b2b2b;
-      --light: #fff;
+      --muted:#6b6b6b;
+      --white:#ffffff;
+      --shadow: 0 6px 20px rgba(43,43,43,0.08);
+      --radius: 12px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(180deg,var(--secondary),#fff);
+      color:var(--dark);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
     }
 
-    body {
-      background: var(--light);
-      color: var(--dark);
+    /* ---------- HEADER ---------- */
+    header{
+      width:100%;
+      padding:1.2rem 6%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,0.85);
+      backdrop-filter: blur(6px);
+      z-index:50;
+      border-bottom:1px solid rgba(0,0,0,0.05);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:0.75rem;
+    }
+    .logo{
+      width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));
+      box-shadow: 0 4px 12px rgba(255,127,80,0.18);
+      display:inline-block;
+    }
+    header h1{
+      font-size:1.05rem;
+      color:var(--dark);
+      font-weight:600;
+      letter-spacing:0.2px;
     }
 
-    header {
-      padding: 1.5rem 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--light);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      border-bottom: 1px solid #eee;
+    nav.desktop{
+      display:flex;
+      gap:1rem;
+      align-items:center;
+    }
+    nav.desktop a{
+      text-decoration:none;color:var(--dark);font-weight:500;padding:0.35rem 0.6rem;border-radius:8px;
+    }
+    nav.desktop a:hover{background:rgba(255,127,80,0.08);color:var(--primary)}
+
+    /* mobile toggle */
+    .mobile-toggle{
+      display:none;
+      background:transparent;border:0;padding:0.25rem;border-radius:8px;
+      cursor:pointer;
+    }
+    .mobile-toggle svg{width:26px;height:26px;color:var(--dark)}
+
+    /* ---------- HERO ---------- */
+    .hero{
+      height:70vh;
+      min-height:420px;
+      background-image:url('https://images.pexels.com/photos/5591711/pexels-photo-5591711.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
+      padding:0 6%;
+      overflow:hidden;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.55));
+      z-index:1;
+    }
+    .hero-content{
+      position:relative;z-index:2;max-width:920px;color:var(--white);
+      animation: fadeUp .8s ease both;
+    }
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    .hero h2{font-size:2.5rem;margin-bottom:0.6rem;font-weight:600;line-height:1.05}
+    .hero p{font-size:1.05rem;opacity:0.95;color:rgba(255,255,255,0.95);max-width:760px;margin:0 auto 0}
+
+    /* ---------- SECTION ---------- */
+    .section{padding:3.5rem 6%}
+    .section h2{text-align:center;color:var(--dark);font-size:1.7rem;margin-bottom:0.35rem}
+    .section .section-sub{text-align:center;color:var(--muted);margin-bottom:1.8rem;max-width:900px;margin-left:auto;margin-right:auto}
+
+    /* ---------- PRODUCTS GRID ---------- */
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:1.2rem;
+      align-items:start;
     }
 
-    header h1 {
-      font-weight: 600;
-      font-size: 1.5rem;
-      color: var(--primary);
+    .product{
+      background:var(--white);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:transform .28s ease, box-shadow .28s ease;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+    .product:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(43,43,43,0.12)}
+    .product img{width:100%;height:200px;object-fit:cover;display:block}
+    .product-info{padding:1rem 1.15rem;display:flex;flex-direction:column;gap:0.6rem;flex:1}
+    .product-info h3{font-size:1.05rem;color:var(--dark);margin-bottom:0}
+    .product-info p{font-size:0.92rem;color:var(--muted);flex:1}
+    .meta{display:flex;align-items:center;gap:0.6rem;margin-top:0.6rem;justify-content:space-between}
+    .price{font-weight:700;color:var(--primary)}
+    .btn{
+      display:inline-block;background:var(--primary);color:var(--white);
+      padding:0.54rem 0.9rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.95rem;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(255,127,80,0.18)}
+
+    /* ---------- CONTACT ---------- */
+    .contact-box{max-width:720px;margin:0 auto;background:linear-gradient(180deg,var(--white),#fff);padding:1.4rem;border-radius:12px;box-shadow:var(--shadow)}
+    .contact-box input,.contact-box textarea{width:100%;padding:0.85rem;border-radius:8px;border:1px solid #e6e6e6;font-size:0.95rem;margin-bottom:0.8rem}
+    .contact-box button{background:var(--primary);color:var(--white);padding:0.75rem 1rem;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+
+    /* ---------- FOOTER ---------- */
+    footer{padding:2rem 6%;text-align:center;color:#666;font-size:0.92rem;margin-top:2.5rem}
+
+    /* ---------- Responsive tweaks ---------- */
+    @media (max-width: 900px){
+      .hero{height:62vh;min-height:380px}
+      .hero h2{font-size:2.1rem}
     }
 
-    header nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-      transition: 0.3s;
+    @media (max-width: 700px){
+      header{padding:0.9rem 5%}
+      .mobile-toggle{display:inline-block}
+      nav.desktop{display:none}
+      .hero{height:55vh;min-height:320px}
+      .hero h2{font-size:1.6rem}
+      .hero p{font-size:0.95rem}
+      .products-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+      .product img{height:170px}
+      .product-info h3{font-size:1rem}
+      .product-info p{font-size:0.86rem}
+      .meta{flex-direction:column;align-items:flex-start;gap:0.35rem}
+      .btn{width:100%;text-align:center;padding:0.7rem}
+      .contact-box{padding:1rem}
     }
 
-    header nav a:hover {
-      color: var(--primary);
+    /* mobile slide-down nav */
+    .mobile-nav{
+      position:fixed;top:64px;left:0;right:0;background:linear-gradient(180deg,#fff,rgba(255,255,255,0.98));
+      box-shadow:0 8px 30px rgba(0,0,0,0.08);padding:0.9rem 5%;display:none;z-index:60;border-top:1px solid rgba(0,0,0,0.03)
     }
-
-    /* HERO */
-    .hero {
-      height: 75vh;
-      background: url('https://images.pexels.com/photos/4109993/pexels-photo-4109993.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-      padding: 0 1rem;
-    }
-
-    .hero h2 {
-      font-size: 2.6rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    /* SECTIONS */
-    .section {
-      padding: 4rem 8%;
-      background: var(--secondary);
-    }
-
-    .section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
-
-    .section p.section-sub {
-      text-align: center;
-      color: #555;
-      margin-bottom: 2.5rem;
-    }
-
-    /* PRODUCTS */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem;
-    }
-
-    .product {
-      background: var(--light);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: 0.3s;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
-    }
-
-    .product img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .product-info {
-      padding: 1.3rem;
-      text-align: center;
-    }
-
-    .product-info h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--dark);
-    }
-
-    .product-info p {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    .product-info a {
-      background: var(--primary);
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: 0.3s;
-    }
-
-    .product-info a:hover {
-      background: #ff6633;
-    }
-
-    /* CONTACT */
-    .contact-box {
-      max-width: 600px;
-      margin: 0 auto;
-      background: var(--light);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .contact-box form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-box input,
-    .contact-box textarea {
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 0.9rem;
-    }
-
-    .contact-box button {
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      padding: 0.8rem;
-      border-radius: 6px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .contact-box button:hover {
-      background: #ff6633;
-    }
-
-    footer {
-      background: #111;
-      color: #ccc;
-      text-align: center;
-      padding: 2rem 8%;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-    }
-
-    /* 📱 Responsive Design for Mobile */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        padding: 1rem 5%;
-      }
-
-      .hero {
-        height: 60vh;
-      }
-
-      .hero h2 {
-        font-size: 1.9rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .products-grid {
-        gap: 1.2rem;
-      }
-
-      .product-info h3 {
-        font-size: 1rem;
-      }
-
-      .section {
-        padding: 2.5rem 5%;
-      }
-
-      footer {
-        font-size: 0.85rem;
-      }
-    }
+    .mobile-nav.open{display:block}
+    .mobile-nav a{display:block;padding:0.6rem 0;color:var(--dark);text-decoration:none;border-bottom:1px dashed rgba(0,0,0,0.03)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Home Chef Picks</h1>
-  <nav>
+  <header>
+    <div class="brand">
+      <span class="logo" aria-hidden="true"></span>
+      <h1>Home Chef Picks</h1>
+    </div>
+
+    <nav class="desktop" aria-label="Primary">
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- mobile toggle button -->
+    <button class="mobile-toggle" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h16M4 17h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </header>
+
+  <!-- mobile nav -->
+  <div id="mobile-nav" class="mobile-nav" aria-hidden="true">
     <a href="#products">Products</a>
     <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <h2>Top-Rated Amazon Kitchen Tools For Smart Cooking</h2>
-    <p>We don’t sell — we recommend smart, high-quality tools loved by home chefs worldwide.</p>
   </div>
-</section>
 
-<section class="section" id="products">
-  <h2>Our Best Amazon Picks</h2>
-  <p class="section-sub">Handpicked and highly rated kitchen tools that make cooking easier and more enjoyable.</p>
-
-  <div class="products-grid">
-
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/61dzf0UDknL._AC_SL1500_.jpg" alt="Product 1">
-      <div class="product-info">
-        <h3>Stainless Steel Measuring Spoons Set</h3>
-        <p>Durable, accurate, and stylish — perfect for precise cooking and baking.</p>
-        <a href="https://amzn.to/47q1Vpv" target="_blank">View on Amazon</a>
-      </div>
+  <!-- HERO -->
+  <section class="hero" role="region" aria-label="Hero">
+    <div class="hero-content">
+      <h2>Top-Rated Amazon Kitchen Tools For Smart Cooking</h2>
+      <p>We don’t sell products — we recommend the best Amazon kitchen tools that make cooking easier, faster, and more enjoyable.</p>
     </div>
+  </section>
 
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/61A5Vyz5q5L._AC_SL1500_.jpg" alt="Product 2">
-      <div class="product-info">
-        <h3>Non-Stick Frying Pan</h3>
-        <p>Professional-grade pan with even heat distribution and easy clean-up.</p>
-        <a href="https://amzn.to/47q1RpL" target="_blank">View on Amazon</a>
-      </div>
+  <!-- PRODUCTS -->
+  <section class="section" id="products">
+    <h2>Our Best Amazon Picks</h2>
+    <p class="section-sub">Carefully selected and highly-rated kitchen products trusted by home chefs.</p>
+
+    <div class="products-grid">
+      <!-- product 1 -->
+      <article class="product" aria-labelledby="p1">
+        <img src="PUT_IMAGE_URL_1" alt="Stainless Steel Measuring Spoons Set">
+        <div class="product-info">
+          <h3 id="p1">Stainless Steel Measuring Spoons Set</h3>
+          <p>Durable, accurate, and stylish — perfect for precise cooking and baking.</p>
+          <div class="meta">
+            <div class="price">$12.99</div>
+            <a class="btn" href="https://amzn.to/47q1Vpv" target="_blank" rel="noopener">View on Amazon</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- product 2 -->
+      <article class="product" aria-labelledby="p2">
+        <img src="PUT_IMAGE_URL_2" alt="Non-Stick Frying Pan">
+        <div class="product-info">
+          <h3 id="p2">Non-Stick Frying Pan</h3>
+          <p>Professional-grade pan with even heat distribution and easy clean-up.</p>
+          <div class="meta">
+            <div class="price">$29.99</div>
+            <a class="btn" href="https://amzn.to/47q1RpL" target="_blank" rel="noopener">View on Amazon</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- product 3 -->
+      <article class="product" aria-labelledby="p3">
+        <img src="PUT_IMAGE_URL_3" alt="Adjustable Spice Rack Organizer">
+        <div class="product-info">
+          <h3 id="p3">Adjustable Spice Rack Organizer</h3>
+          <p>Space-saving and elegant — keep your kitchen tidy and accessible.</p>
+          <div class="meta">
+            <div class="price">$24.99</div>
+            <a class="btn" href="https://amzn.to/3WglYl1" target="_blank" rel="noopener">View on Amazon</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- product 4 -->
+      <article class="product" aria-labelledby="p4">
+        <img src="PUT_IMAGE_URL_4" alt="Premium Kitchen Knife Set">
+        <div class="product-info">
+          <h3 id="p4">Premium Kitchen Knife Set</h3>
+          <p>Sharp, ergonomic, and rust-resistant knives for every cooking task.</p>
+          <div class="meta">
+            <div class="price">$49.99</div>
+            <a class="btn" href="https://amzn.to/4hbzdwK" target="_blank" rel="noopener">View on Amazon</a>
+          </div>
+        </div>
+      </article>
+
     </div>
+  </section>
 
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/71Zb7FucphL._AC_SL1500_.jpg" alt="Product 3">
-      <div class="product-info">
-        <h3>Adjustable Spice Rack Organizer</h3>
-        <p>Space-saving and elegant — keep your kitchen tidy and accessible.</p>
-        <a href="https://amzn.to/3WglYl1" target="_blank">View on Amazon</a>
-      </div>
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2>Contact Support</h2>
+    <p class="section-sub">Have a question or issue? Send us a message.</p>
+
+    <div class="contact-box">
+      <form action="https://formsubmit.co/goatlamg@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
+        <div style="text-align:right;margin-top:0.4rem">
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
     </div>
+  </section>
 
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/61dzf0UDknL._AC_SL1500_.jpg" alt="Product 4">
-      <div class="product-info">
-        <h3>Premium Kitchen Knife Set</h3>
-        <p>Sharp, ergonomic, and rust-resistant knives for every cooking task.</p>
-        <a href="https://amzn.to/4hbzdwK" target="_blank">View on Amazon</a>
-      </div>
-    </div>
+  <footer>
+    <p>© 2025 Home Chef Picks. All rights reserved.</p>
+  </footer>
 
-  </div>
-</section>
+  <script>
+    // Mobile nav toggle
+    const toggleBtn = document.querySelector('.mobile-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
 
-<section class="section" id="contact">
-  <h2>Contact Support</h2>
-  <p class="section-sub">Have a question or issue? Send us a message.</p>
+    toggleBtn.addEventListener('click', () => {
+      const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.classList.toggle('open');
+      mobileNav.setAttribute('aria-hidden', String(expanded));
+    });
 
-  <div class="contact-box">
-    <form action="https://formsubmit.co/goatlamg@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <p>© 2025 Home Chef Picks. All rights reserved.</p>
-</footer>
-
+    // Optional: close mobile nav on link click
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+      });
+    });
+  </script>
 </body>
 </html>
