@@ -9,15 +9,22 @@
     gtag('js', new Date());
     gtag('config', 'G-7BKCY99RRC');
   </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Chef Picks | Best Amazon Kitchen Tools</title>
+  <title>Home Chef Picks | Save up to 53% on Amazon Kitchen Tools</title>
+  <meta name="description" content="Save up to 53% on top-rated kitchen tools — cookware, knives & choppers. Handpicked Amazon deals loved by home chefs.">
+  <meta property="og:title" content="Home Chef Picks — Save up to 53% on Top Kitchen Tools">
+  <meta property="og:description" content="Top-rated kitchen essentials — cookware, knives & gadgets. Shop curated Amazon picks.">
+  <meta property="og:image" content="https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #ff7f50;
       --secondary: #fff5ec;
-      --accent: #ffbfa3;
       --dark: #2b2b2b;
       --muted: #6b6b6b;
       --white: #ffffff;
@@ -28,9 +35,10 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, var(--secondary), #fff);
+      background: var(--secondary);
       color: var(--dark);
       line-height: 1.5;
+      scroll-behavior: smooth;
     }
 
     /* HEADER */
@@ -68,7 +76,7 @@
 
     /* HERO */
     .hero {
-      height: 80vh;
+      height: 75vh;
       background: url('https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg') center/cover no-repeat fixed;
       display: flex;
       align-items: center;
@@ -76,7 +84,7 @@
       text-align: center;
       position: relative;
       color: white;
-      overflow: hidden;
+      animation: fadeIn 2s ease-in-out;
     }
 
     .hero::after {
@@ -84,32 +92,29 @@
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: brightness(0.8);
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
       padding: 0 6%;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero h2 {
       font-size: 2.6rem;
       margin-bottom: 1rem;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      text-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       max-width: 700px;
       margin: 0 auto;
-      text-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
 
     /* PRODUCTS */
@@ -154,11 +159,7 @@
       width: 100%;
       height: 230px;
       object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .product:hover img {
-      transform: scale(1.05);
+      loading: lazy;
     }
 
     .product-info {
@@ -167,6 +168,12 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+    }
+
+    .trust-row {
+      font-size: .9rem;
+      color: #6b6b6b;
+      margin-bottom: 8px;
     }
 
     .product-info h3 {
@@ -196,37 +203,6 @@
       background: #ff6a33;
     }
 
-    /* CONTACT */
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    form input, form textarea {
-      margin-bottom: 1rem;
-      padding: 0.8rem;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    form button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.9rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-weight: 500;
-    }
-
-    form button:hover {
-      background: #ff6a33;
-    }
-
     footer {
       background: #111;
       color: #ccc;
@@ -236,14 +212,29 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 768px) {
-      .hero h2 { font-size: 1.9rem; }
-      .hero p { font-size: 0.95rem; }
+    /* Floating CTA */
+    .floating-cta {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 9999;
+      background: #ff6a33;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(255,106,51,0.18);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width:480px){
+      .floating-cta { right: 12px; bottom: 12px; padding: 12px 14px; font-size:15px; }
+      .hero h2 { font-size: 1.8rem; }
+      .hero p { font-size: .95rem; }
       .product img { height: 190px; }
     }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -256,8 +247,8 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h2>Top-Rated Amazon Kitchen Tools</h2>
-    <p>Discover the most loved and practical kitchen gadgets that make cooking smarter and easier.</p>
+    <h2>Top-Rated Kitchen Tools — Save Up To 53% Today</h2>
+    <p>Handpicked cookware, knives & gadgets — trusted picks that make cooking easier.</p>
   </div>
 </section>
 
@@ -269,27 +260,30 @@
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/81GZZyozv-L._AC_SX679_.jpg" alt="Vegetable Chopper">
       <div class="product-info">
+        <div class="trust-row">⭐ 4.7 (12,000+ reviews) • Free Shipping</div>
         <h3>Fullstar The Original Pro Chopper</h3>
         <p>4-in-1 vegetable chopper and spiralizer with container — perfect kitchen essential.</p>
-        <a class="btn" href="https://amzn.to/4hrcbSE" target="_blank">Buy Now on Amazon</a>
+        <a class="btn" href="https://amzn.to/4hrcbSE" target="_blank">Get Deal on Amazon</a>
       </div>
     </div>
 
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/71sQ59NJRGL._AC_SX679_.jpg" alt="Cookware Set">
       <div class="product-info">
+        <div class="trust-row">⭐ 4.8 (9,800+ reviews) • Limited Offer</div>
         <h3>CAROTE 14Pcs Pots and Pans Set</h3>
         <p>Non-stick ceramic cookware set, PFAS & PFOA free, durable and non-toxic cooking set.</p>
-        <a class="btn" href="https://amzn.to/43u0Jjw" target="_blank">Buy Now on Amazon</a>
+        <a class="btn" href="https://amzn.to/43u0Jjw" target="_blank">Get Deal on Amazon</a>
       </div>
     </div>
 
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/81Yzi62kDmL._SX522_.jpg" alt="Knife Set">
       <div class="product-info">
+        <div class="trust-row">⭐ 4.9 (15,200+ reviews) • Bestseller</div>
         <h3>Ninja K32012 Foodi Knife System</h3>
         <p>12-piece premium knife block set with built-in sharpener — German stainless steel.</p>
-        <a class="btn" href="https://amzn.to/43CpmdM" target="_blank">Buy Now on Amazon</a>
+        <a class="btn" href="https://amzn.to/43CpmdM" target="_blank">Get Deal on Amazon</a>
       </div>
     </div>
   </div>
@@ -298,18 +292,36 @@
 <section class="section" id="contact">
   <h2>Contact Support</h2>
   <p class="section-sub">Have a question or issue? Send us a message.</p>
-  <form action="https://formsubmit.co/goatlamg@gmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <div class="contact-box">
+    <form action="https://formsubmit.co/goatlamg@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 </section>
 
 <footer>
   <p>© 2025 Home Chef Picks. All rights reserved.</p>
 </footer>
+
+<a class="floating-cta" href="https://amzn.to/43u0Jjw" target="_blank">🔥 Get the Deal on Amazon</a>
+
+<script>
+document.addEventListener('click', function(e){
+  const target = e.target.closest('a[href*="amzn.to"], .btn');
+  if(!target) return;
+  try {
+    gtag('event', 'click_buy', {
+      'event_category': 'outbound',
+      'event_label': target.href,
+      'value': 1
+    });
+  } catch(err){}
+});
+</script>
 
 </body>
 </html>
