@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7BKCY99RRC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-7BKCY99RRC');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BKCY99RRC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7BKCY99RRC');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Chef Picks | Best Amazon Kitchen Tools</title>
@@ -68,14 +68,15 @@
 
     /* HERO */
     .hero {
-      height: 70vh;
-      background: url('https://images.pexels.com/photos/5591711/pexels-photo-5591711.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+      height: 80vh;
+      background: url('https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg') center/cover no-repeat fixed;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       position: relative;
       color: white;
+      overflow: hidden;
     }
 
     .hero::after {
@@ -83,23 +84,32 @@
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: brightness(0.8);
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
       padding: 0 6%;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero h2 {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       margin-bottom: 1rem;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     .hero p {
       font-size: 1.1rem;
       max-width: 700px;
       margin: 0 auto;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.3);
     }
 
     /* PRODUCTS */
@@ -144,6 +154,11 @@
       width: 100%;
       height: 230px;
       object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product:hover img {
+      transform: scale(1.05);
     }
 
     .product-info {
@@ -181,6 +196,37 @@
       background: #ff6a33;
     }
 
+    /* CONTACT */
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    form input, form textarea {
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    form button:hover {
+      background: #ff6a33;
+    }
+
     footer {
       background: #111;
       color: #ccc;
@@ -190,20 +236,14 @@
       font-size: 0.9rem;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 1.8rem;
-      }
-      .hero p {
-        font-size: 0.95rem;
-      }
-      .product img {
-        height: 190px;
-      }
+      .hero h2 { font-size: 1.9rem; }
+      .hero p { font-size: 0.95rem; }
+      .product img { height: 190px; }
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -226,7 +266,6 @@
   <p class="section-sub">Highly-rated kitchen essentials chosen for home chefs.</p>
 
   <div class="products-grid">
-    <!-- Product 1 -->
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/81GZZyozv-L._AC_SX679_.jpg" alt="Vegetable Chopper">
       <div class="product-info">
@@ -236,7 +275,6 @@
       </div>
     </div>
 
-    <!-- Product 2 -->
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/71sQ59NJRGL._AC_SX679_.jpg" alt="Cookware Set">
       <div class="product-info">
@@ -246,7 +284,6 @@
       </div>
     </div>
 
-    <!-- Product 3 -->
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/81Yzi62kDmL._SX522_.jpg" alt="Knife Set">
       <div class="product-info">
@@ -261,15 +298,13 @@
 <section class="section" id="contact">
   <h2>Contact Support</h2>
   <p class="section-sub">Have a question or issue? Send us a message.</p>
-  <div class="contact-box">
-    <form action="https://formsubmit.co/goatlamg@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
+  <form action="https://formsubmit.co/goatlamg@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 </section>
 
 <footer>
