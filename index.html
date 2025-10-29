@@ -1,327 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BKCY99RRC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-7BKCY99RRC');
+    gtag('config', 'G-7BKCY99RRC', { 'anonymize_ip': true });
   </script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Chef Picks | Save up to 53% on Amazon Kitchen Tools</title>
-  <meta name="description" content="Save up to 53% on top-rated kitchen tools — cookware, knives & choppers. Handpicked Amazon deals loved by home chefs.">
-  <meta property="og:title" content="Home Chef Picks — Save up to 53% on Top Kitchen Tools">
-  <meta property="og:description" content="Top-rated kitchen essentials — cookware, knives & gadgets. Shop curated Amazon picks.">
-  <meta property="og:image" content="https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home Chef Picks — Top Kitchen Tools (Up to 53% OFF)</title>
+  <meta name="description" content="Handpicked kitchen tools & cookware — top-rated Amazon deals. Non-stick, PFAS-free cookware, choppers, and knife sets. Grab limited offers." />
+  <meta name="theme-color" content="#f6efe8" />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Home Chef Picks — Top Kitchen Tools (Up to 53% OFF)" />
+  <meta property="og:description" content="Top-rated kitchen essentials — cookware, knives & gadgets. Limited time offers." />
+  <meta property="og:image" content="https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Preload hero image (hosted on Pinterest) for faster LCP if allowed by remote host -->
+  <link rel="preload" as="image" href="https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --primary: #ff7f50;
-      --secondary: #fff5ec;
-      --dark: #2b2b2b;
-      --muted: #6b6b6b;
-      --white: #ffffff;
-      --shadow: 0 6px 20px rgba(43,43,43,0.08);
-      --radius: 12px;
+    :root{
+      --primary:#ff6a33;
+      --accent:#ffbfa3;
+      --bg:#fff7f1;
+      --dark:#222;
+      --muted:#6b6b6b;
+      --card:#ffffff;
+      --radius:12px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--secondary);
-      color: var(--dark);
-      line-height: 1.5;
-      scroll-behavior: smooth;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg, var(--bg), #ffffff);
+      color:var(--dark);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
     }
 
-    /* HEADER */
-    header {
-      width: 100%;
-      padding: 1.2rem 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.9);
+    /* layout container */
+    .container { max-width:1200px; margin:0 auto; padding:0 6%; }
+
+    /* header */
+    header{
+      position:sticky; top:0; z-index:80;
       backdrop-filter: blur(6px);
-      z-index: 50;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      background: rgba(255,255,255,0.85);
+      border-bottom:1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+    }
+    .header-inner { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 6%; max-width:1200px; margin:0 auto; }
+    .brand { font-weight:700; color:var(--dark); font-size:1.05rem; letter-spacing:0.2px; }
+    nav a { margin-left:14px; text-decoration:none; color:var(--dark); font-weight:500; transition:color .18s; }
+    nav a:hover{ color:var(--primary) }
+
+    /* hero */
+    .hero{
+      position:relative;
+      min-height:74vh;
+      display:flex; align-items:center; justify-content:center; text-align:center;
+      color:#fff; overflow:hidden;
+      background-color:#efe6dd; /* fallback */
+      background-position:center center;
+      background-size:cover;
+      background-repeat:no-repeat;
+      will-change: background-position;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.48));
+      pointer-events:none;
+    }
+    .hero-inner{ position:relative; z-index:3; padding:36px 6%; max-width:920px; animation:heroIn .9s both ease-out; }
+    .hero h1{ font-size:clamp(1.6rem,4vw,2.6rem); margin-bottom:10px; font-weight:700; text-shadow:0 6px 18px rgba(0,0,0,0.45); }
+    .hero p{ font-size:clamp(.95rem,2.2vw,1.15rem); color:rgba(255,255,255,0.95); margin-bottom:16px; text-shadow:0 4px 12px rgba(0,0,0,0.35); }
+    .cta-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .btn-primary{ background:var(--primary); color:#fff; padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:700; box-shadow:0 10px 30px rgba(255,106,51,0.16); transition:transform .16s, box-shadow .16s }
+    .btn-primary:hover{ transform: translateY(-4px); box-shadow:0 18px 40px rgba(255,106,51,0.22); }
+    .btn-ghost{ background: rgba(255,255,255,0.12); color:#fff; padding:10px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); text-decoration:none; font-weight:600 }
+
+    @keyframes heroIn { from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:none} }
+
+    /* products */
+    .section { padding:48px 6%; }
+    .section h2{ text-align:center; font-size:1.8rem; margin-bottom:8px; }
+    .section p.section-sub{ text-align:center; color:var(--muted); margin-bottom:24px; }
+
+    .products-grid{ display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); max-width:1200px; margin:0 auto; }
+    .card{ background:var(--card); border-radius:12px; box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column; transition:transform .28s, box-shadow .28s; }
+    .card:hover{ transform:translateY(-8px); box-shadow:0 20px 50px rgba(0,0,0,0.12); }
+    .card img{ width:100%; height:220px; object-fit:cover; display:block; }
+    .card-body{ padding:14px; display:flex; flex-direction:column; gap:8px; flex:1 }
+    .trust{ font-size:0.9rem; color:var(--muted) }
+    .price-row{ display:flex; align-items:center; gap:12px; margin-top:6px; justify-content:space-between; }
+    .badge{ background:#e74c3c; color:#fff; padding:6px 8px; border-radius:8px; font-weight:700; font-size:.85rem }
+
+    /* contact */
+    .contact { padding:36px 6%; background:transparent; }
+    .form{ max-width:680px; margin:0 auto; background:#fff; padding:18px; border-radius:12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:10px }
+    .form input,.form textarea{ padding:10px; border-radius:8px; border:1px solid #eee; font-size:1rem; width:100% }
+    .form button{ background:var(--primary); color:#fff; padding:10px 12px; border-radius:10px; font-weight:700; border:0; cursor:pointer }
+
+    /* floating CTA */
+    .floating-cta{
+      position:fixed; right:18px; bottom:18px; z-index:999;
+      background:linear-gradient(180deg,var(--primary),#ff5b1a);
+      color:#fff; padding:13px 16px; border-radius:12px; box-shadow:0 18px 48px rgba(255,106,51,0.18); text-decoration:none; font-weight:800;
     }
 
-    header h1 {
-      font-size: 1.2rem;
-      color: var(--dark);
-      font-weight: 600;
+    /* footer */
+    footer{ background:#0f0f10; color:#d0d0d0; padding:24px 6%; text-align:center; margin-top:24px }
+
+    /* small screens */
+    @media (max-width:800px){
+      header .header-inner{ padding:10px 4% }
+      .hero{ background-attachment:scroll } /* fixed backgrounds can behave poorly on mobile */
+      .hero h1{ font-size:1.5rem }
+      .hero p{ font-size:.95rem }
+      .floating-cta{ right:12px; bottom:12px; padding:12px 14px; font-size:.95rem }
+      .card img{ height:170px }
     }
 
-    nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-      transition: 0.3s;
-    }
+    /* accessibility focus */
+    a:focus, button:focus { outline:3px solid rgba(255,106,51,0.14); outline-offset:3px; }
 
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    /* HERO */
-    .hero {
-      height: 75vh;
-      background: url('https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg') center/cover no-repeat fixed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      color: white;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 6%;
-    }
-
-    .hero h2 {
-      font-size: 2.6rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    /* PRODUCTS */
-    .section {
-      padding: 4rem 6%;
-    }
-
-    .section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .section p.section-sub {
-      text-align: center;
-      color: #555;
-      margin-bottom: 2.5rem;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 2rem;
-    }
-
-    .product {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .product:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    .product img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      loading: lazy;
-    }
-
-    .product-info {
-      padding: 1.2rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .trust-row {
-      font-size: .9rem;
-      color: #6b6b6b;
-      margin-bottom: 8px;
-    }
-
-    .product-info h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .product-info p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .btn {
-      display: inline-block;
-      text-align: center;
-      background: var(--primary);
-      color: white;
-      padding: 0.7rem 1.2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #ff6a33;
-    }
-
-    footer {
-      background: #111;
-      color: #ccc;
-      text-align: center;
-      padding: 2rem 8%;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-    }
-
-    /* Floating CTA */
-    .floating-cta {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 9999;
-      background: #ff6a33;
-      color: #fff;
-      padding: 14px 18px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(255,106,51,0.18);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    @media (max-width:480px){
-      .floating-cta { right: 12px; bottom: 12px; padding: 12px 14px; font-size:15px; }
-      .hero h2 { font-size: 1.8rem; }
-      .hero p { font-size: .95rem; }
-      .product img { height: 190px; }
-    }
+    /* fade-in on scroll */
+    .reveal { opacity:0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.show { opacity:1; transform:none; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Home Chef Picks</h1>
-  <nav>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header role="banner" aria-label="Main header">
+    <div class="header-inner">
+      <div class="brand">Home Chef Picks</div>
+      <nav aria-label="Primary navigation">
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h2>Top-Rated Kitchen Tools — Save Up To 53% Today</h2>
-    <p>Handpicked cookware, knives & gadgets — trusted picks that make cooking easier.</p>
-  </div>
-</section>
+  <!-- HERO (background lazy-loaded by JS) -->
+  <section class="hero" role="region" aria-label="Top deals">
+    <div class="hero-inner hero-content container" aria-hidden="false">
+      <h1>Top-Rated Kitchen Tools — Save Up To 53% Today</h1>
+      <p>Handpicked cookware, knives & time-saving gadgets — trusted picks that make cooking easier and healthier.</p>
 
-<section class="section" id="products">
-  <h2>Our Best Amazon Picks</h2>
-  <p class="section-sub">Highly-rated kitchen essentials chosen for home chefs.</p>
-
-  <div class="products-grid">
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/81GZZyozv-L._AC_SX679_.jpg" alt="Vegetable Chopper">
-      <div class="product-info">
-        <div class="trust-row">⭐ 4.7 (12,000+ reviews) • Free Shipping</div>
-        <h3>Fullstar The Original Pro Chopper</h3>
-        <p>4-in-1 vegetable chopper and spiralizer with container — perfect kitchen essential.</p>
-        <a class="btn" href="https://amzn.to/4hrcbSE" target="_blank">Get Deal on Amazon</a>
+      <div class="cta-row" role="group" aria-label="Primary actions">
+        <a class="btn-primary" id="shopNowMain" href="https://amzn.to/43u0Jjw" target="_blank" rel="noopener">Get Deal on Amazon</a>
+        <a class="btn-ghost" href="#products">See Best Picks</a>
       </div>
     </div>
+  </section>
 
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/71sQ59NJRGL._AC_SX679_.jpg" alt="Cookware Set">
-      <div class="product-info">
-        <div class="trust-row">⭐ 4.8 (9,800+ reviews) • Limited Offer</div>
-        <h3>CAROTE 14Pcs Pots and Pans Set</h3>
-        <p>Non-stick ceramic cookware set, PFAS & PFOA free, durable and non-toxic cooking set.</p>
-        <a class="btn" href="https://amzn.to/43u0Jjw" target="_blank">Get Deal on Amazon</a>
+  <main id="main">
+    <section class="section" id="products" aria-labelledby="products-heading">
+      <h2 id="products-heading">Our Best Amazon Picks</h2>
+      <p class="section-sub">Highly-rated kitchen essentials chosen for home chefs.</p>
+
+      <div class="products-grid container" role="list">
+        <!-- Card 1 -->
+        <article class="card reveal" role="listitem" aria-label="Fullstar chopper">
+          <img loading="lazy" src="https://m.media-amazon.com/images/I/81GZZyozv-L._AC_SX679_.jpg" alt="Fullstar The Original Pro Chopper">
+          <div class="card-body">
+            <div class="trust">⭐ 4.7 • 12,000+ reviews • Free shipping</div>
+            <h3>Fullstar The Original Pro Chopper</h3>
+            <p>4-in-1 vegetable chopper & spiralizer — fast prep, easy clean.</p>
+            <div class="price-row">
+              <div><span class="badge">Deal</span> <span style="font-weight:700;">$19.99</span></div>
+              <a class="btn" href="https://amzn.to/4hrcbSE" target="_blank" rel="noopener">Buy on Amazon</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card reveal" role="listitem" aria-label="Carote cookware">
+          <img loading="lazy" src="https://m.media-amazon.com/images/I/71sQ59NJRGL._AC_SX679_.jpg" alt="CAROTE 14Pcs Pots and Pans Set">
+          <div class="card-body">
+            <div class="trust">⭐ 4.8 • 9,800+ reviews • Limited Offer</div>
+            <h3>CAROTE 14Pcs Pots & Pans Set</h3>
+            <p>Non-stick ceramic cookware — PFAS/PFOA free, stylish and durable.</p>
+            <div class="price-row">
+              <div><span class="badge">-53%</span> <span style="font-weight:700;">$69.98</span></div>
+              <a class="btn" href="https://amzn.to/43u0Jjw" target="_blank" rel="noopener">Buy on Amazon</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card reveal" role="listitem" aria-label="Ninja knife">
+          <img loading="lazy" src="https://m.media-amazon.com/images/I/81Yzi62kDmL._SX522_.jpg" alt="Ninja K32012 Foodi Knife System">
+          <div class="card-body">
+            <div class="trust">⭐ 4.9 • 15,200+ reviews • Bestseller</div>
+            <h3>Ninja K32012 Foodi Knife System</h3>
+            <p>12-piece premium knife block set with built-in sharpener — German steel.</p>
+            <div class="price-row">
+              <div><span style="font-weight:700;">$129.99</span></div>
+              <a class="btn" href="https://amzn.to/43CpmdM" target="_blank" rel="noopener">Buy on Amazon</a>
+            </div>
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/81Yzi62kDmL._SX522_.jpg" alt="Knife Set">
-      <div class="product-info">
-        <div class="trust-row">⭐ 4.9 (15,200+ reviews) • Bestseller</div>
-        <h3>Ninja K32012 Foodi Knife System</h3>
-        <p>12-piece premium knife block set with built-in sharpener — German stainless steel.</p>
-        <a class="btn" href="https://amzn.to/43CpmdM" target="_blank">Get Deal on Amazon</a>
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" style="text-align:center">Contact Support</h2>
+      <p style="text-align:center; color:var(--muted); margin-bottom:12px;">Have a question? Send us a message and we'll reply asap.</p>
+
+      <div class="form" role="form" aria-label="Contact form">
+        <form id="contactForm" action="https://formsubmit.co/goatlamg@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input name="name" type="text" placeholder="Your name" required>
+          <input name="email" type="email" placeholder="Your email" required>
+          <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© 2025 Home Chef Picks. All rights reserved.</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="section" id="contact">
-  <h2>Contact Support</h2>
-  <p class="section-sub">Have a question or issue? Send us a message.</p>
-  <div class="contact-box">
-    <form action="https://formsubmit.co/goatlamg@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+  <!-- Floating CTA -->
+  <a class="floating-cta" href="https://amzn.to/43u0Jjw" id="floatBuy" target="_blank" rel="noopener">🔥 Get Deal — CAROTE Set</a>
 
-<footer>
-  <p>© 2025 Home Chef Picks. All rights reserved.</p>
-</footer>
+  <!-- Scripts: lazy hero background, parallax tweak, GA events, scroll reveal -->
+  <script>
+    (function(){
+      // 1) Lazy-load hero background (use remote Pinterest image)
+      const hero = document.querySelector('.hero');
+      const heroImg = 'https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg';
+      const img = new Image();
+      img.src = heroImg;
+      img.onload = function(){ hero.style.backgroundImage = 'url("'+heroImg+'")'; };
 
-<a class="floating-cta" href="https://amzn.to/43u0Jjw" target="_blank">🔥 Get the Deal on Amazon</a>
+      // 2) slight parallax on scroll (subtle)
+      let lastY = 0, ticking = false;
+      function onScroll(){ lastY = window.scrollY; if(!ticking){ window.requestAnimationFrame(() => {
+          const y = lastY * 0.06; // subtle
+          hero.style.backgroundPosition = `center calc(50% + ${y}px)`;
+          ticking = false;
+      }); ticking = true; } }
+      window.addEventListener('scroll', onScroll, {passive:true});
 
-<script>
-document.addEventListener('click', function(e){
-  const target = e.target.closest('a[href*="amzn.to"], .btn');
-  if(!target) return;
-  try {
-    gtag('event', 'click_buy', {
-      'event_category': 'outbound',
-      'event_label': target.href,
-      'value': 1
-    });
-  } catch(err){}
-});
-</script>
+      // 3) GA event for outbound clicks (buttons to Amazon)
+      document.addEventListener('click', function(e){
+        const a = e.target.closest('a');
+        if(!a) return;
+        const href = a.getAttribute('href') || '';
+        if(href.includes('amzn.to') || href.includes('amazon.com')){
+          try {
+            gtag('event','click_buy',{ 'event_category':'outbound', 'event_label': href });
+          } catch(e){}
+        }
+      });
+
+      // 4) Scroll reveal using IntersectionObserver
+      const reveals = document.querySelectorAll('.reveal');
+      if('IntersectionObserver' in window){
+        const obs = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if(entry.isIntersecting){
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {threshold: 0.12});
+        reveals.forEach(r => obs.observe(r));
+      } else {
+        // fallback
+        reveals.forEach(r => r.classList.add('show'));
+      }
+
+      // 5) simple contact UX: show sending state
+      const form = document.getElementById('contactForm');
+      if(form){
+        form.addEventListener('submit', function(){
+          const btn = form.querySelector('button[type="submit"]');
+          if(btn){ btn.disabled = true; btn.textContent = 'Sending...'; }
+        });
+      }
+
+    })();
+  </script>
+
+  <!-- JSON-LD basic site data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Home Chef Picks",
+    "url":"https://kitchen-tools-shop.pages.dev",
+    "potentialAction": {
+      "@type":"SearchAction",
+      "target":"https://kitchen-tools-shop.pages.dev/?s={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
 
 </body>
 </html>
