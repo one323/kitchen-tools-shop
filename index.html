@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Analytics (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BKCY99RRC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7BKCY99RRC', { 'anonymize_ip': true });
-  </script>
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Home Chef Picks — Top Kitchen Tools (Up to 53% OFF)</title>
@@ -22,9 +13,6 @@
   <meta property="og:image" content="https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Preload hero image (hosted on Pinterest) for faster LCP if allowed by remote host -->
-  <link rel="preload" as="image" href="https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -40,22 +28,17 @@
       --radius:12px;
       --shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
-
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
     body{
       font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
       background: linear-gradient(180deg, var(--bg), #ffffff);
       color:var(--dark);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       line-height:1.5;
     }
 
-    /* layout container */
     .container { max-width:1200px; margin:0 auto; padding:0 6%; }
 
-    /* header */
     header{
       position:sticky; top:0; z-index:80;
       backdrop-filter: blur(6px);
@@ -68,34 +51,29 @@
     nav a { margin-left:14px; text-decoration:none; color:var(--dark); font-weight:500; transition:color .18s; }
     nav a:hover{ color:var(--primary) }
 
-    /* hero */
     .hero{
       position:relative;
       min-height:74vh;
       display:flex; align-items:center; justify-content:center; text-align:center;
       color:#fff; overflow:hidden;
-      background-color:#efe6dd; /* fallback */
+      background-color:#efe6dd;
       background-position:center center;
       background-size:cover;
       background-repeat:no-repeat;
-      will-change: background-position;
     }
     .hero::after{
       content:""; position:absolute; inset:0;
       background: linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.48));
       pointer-events:none;
     }
-    .hero-inner{ position:relative; z-index:3; padding:36px 6%; max-width:920px; animation:heroIn .9s both ease-out; }
+    .hero-inner{ position:relative; z-index:3; padding:36px 6%; max-width:920px; }
     .hero h1{ font-size:clamp(1.6rem,4vw,2.6rem); margin-bottom:10px; font-weight:700; text-shadow:0 6px 18px rgba(0,0,0,0.45); }
     .hero p{ font-size:clamp(.95rem,2.2vw,1.15rem); color:rgba(255,255,255,0.95); margin-bottom:16px; text-shadow:0 4px 12px rgba(0,0,0,0.35); }
     .cta-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-    .btn-primary{ background:var(--primary); color:#fff; padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:700; box-shadow:0 10px 30px rgba(255,106,51,0.16); transition:transform .16s, box-shadow .16s }
+    .btn-primary{ background:var(--primary); color:#fff; padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:700; transition:transform .16s }
     .btn-primary:hover{ transform: translateY(-4px); box-shadow:0 18px 40px rgba(255,106,51,0.22); }
     .btn-ghost{ background: rgba(255,255,255,0.12); color:#fff; padding:10px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); text-decoration:none; font-weight:600 }
 
-    @keyframes heroIn { from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:none} }
-
-    /* products */
     .section { padding:48px 6%; }
     .section h2{ text-align:center; font-size:1.8rem; margin-bottom:8px; }
     .section p.section-sub{ text-align:center; color:var(--muted); margin-bottom:24px; }
@@ -109,214 +87,194 @@
     .price-row{ display:flex; align-items:center; gap:12px; margin-top:6px; justify-content:space-between; }
     .badge{ background:#e74c3c; color:#fff; padding:6px 8px; border-radius:8px; font-weight:700; font-size:.85rem }
 
-    /* contact */
     .contact { padding:36px 6%; background:transparent; }
     .form{ max-width:680px; margin:0 auto; background:#fff; padding:18px; border-radius:12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:10px }
     .form input,.form textarea{ padding:10px; border-radius:8px; border:1px solid #eee; font-size:1rem; width:100% }
     .form button{ background:var(--primary); color:#fff; padding:10px 12px; border-radius:10px; font-weight:700; border:0; cursor:pointer }
 
-    /* floating CTA */
     .floating-cta{
       position:fixed; right:18px; bottom:18px; z-index:999;
       background:linear-gradient(180deg,var(--primary),#ff5b1a);
-      color:#fff; padding:13px 16px; border-radius:12px; box-shadow:0 18px 48px rgba(255,106,51,0.18); text-decoration:none; font-weight:800;
+      color:#fff; padding:13px 16px; border-radius:12px; text-decoration:none; font-weight:800;
+      display:none;
     }
 
-    /* footer */
     footer{ background:#0f0f10; color:#d0d0d0; padding:24px 6%; text-align:center; margin-top:24px }
 
-    /* small screens */
     @media (max-width:800px){
-      header .header-inner{ padding:10px 4% }
-      .hero{ background-attachment:scroll } /* fixed backgrounds can behave poorly on mobile */
-      .hero h1{ font-size:1.5rem }
-      .hero p{ font-size:.95rem }
-      .floating-cta{ right:12px; bottom:12px; padding:12px 14px; font-size:.95rem }
       .card img{ height:170px }
+      .floating-cta{ right:12px; bottom:12px; padding:12px 14px; font-size:.95rem }
     }
-
-    /* accessibility focus */
-    a:focus, button:focus { outline:3px solid rgba(255,106,51,0.14); outline-offset:3px; }
-
-    /* fade-in on scroll */
-    .reveal { opacity:0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.show { opacity:1; transform:none; }
   </style>
 </head>
 <body>
 
-  <header role="banner" aria-label="Main header">
-    <div class="header-inner">
-      <div class="brand">Home Chef Picks</div>
-      <nav aria-label="Primary navigation">
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header role="banner" aria-label="Main header">
+  <div class="header-inner">
+    <div class="brand">Home Chef Picks</div>
+    <nav aria-label="Primary navigation">
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" role="region" aria-label="Top deals">
+  <div class="hero-inner hero-content container" aria-hidden="false">
+    <h1>Top-Rated Kitchen Tools — Save Up To 53% Today</h1>
+    <p>Handpicked cookware, knives & time-saving gadgets — trusted picks that make cooking easier and healthier.</p>
+
+    <div class="cta-row" role="group" aria-label="Primary actions">
+      <a class="btn-primary" id="shopNowMain" href="https://amzn.to/43u0Jjw" target="_blank" rel="noopener">🔥 Grab Now on Amazon</a>
+      <a class="btn-ghost" href="#products">See Best Picks</a>
     </div>
-  </header>
 
-  <!-- HERO (background lazy-loaded by JS) -->
-  <section class="hero" role="region" aria-label="Top deals">
-    <div class="hero-inner hero-content container" aria-hidden="false">
-      <h1>Top-Rated Kitchen Tools — Save Up To 53% Today</h1>
-      <p>Handpicked cookware, knives & time-saving gadgets — trusted picks that make cooking easier and healthier.</p>
+    <p style="margin-top:10px; font-size:.95rem; color:#fff;">⭐ 4.8/5 • 37,000+ happy customers • Limited Stock!</p>
+  </div>
+</section>
 
-      <div class="cta-row" role="group" aria-label="Primary actions">
-        <a class="btn-primary" id="shopNowMain" href="https://amzn.to/43u0Jjw" target="_blank" rel="noopener">Get Deal on Amazon</a>
-        <a class="btn-ghost" href="#products">See Best Picks</a>
-      </div>
+<main id="main">
+  <section class="section" id="products" aria-labelledby="products-heading">
+    <h2 id="products-heading">Our Best Amazon Picks</h2>
+    <p class="section-sub">Highly-rated kitchen essentials chosen for home chefs.</p>
+
+    <div class="products-grid container" role="list">
+      <!-- Card 1 -->
+      <article class="card reveal" role="listitem">
+        <img loading="lazy" src="https://m.media-amazon.com/images/I/81GZZyozv-L._AC_SX679_.jpg" alt="Fullstar The Original Pro Chopper">
+        <div class="card-body">
+          <div class="trust">⭐ 4.7 • 12,000+ reviews • Free shipping</div>
+          <h3>Fullstar The Original Pro Chopper</h3>
+          <p>4-in-1 vegetable chopper & spiralizer — fast prep, easy clean.</p>
+          <div class="price-row">
+            <div><span class="badge">Deal</span> <span style="font-weight:700;">$19.99</span></div>
+            <a class="btn-primary" href="https://amzn.to/4hrcbSE" target="_blank" rel="noopener">✅ Buy Today</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card reveal" role="listitem">
+        <img loading="lazy" src="https://m.media-amazon.com/images/I/71sQ59NJRGL._AC_SX679_.jpg" alt="CAROTE 14Pcs Pots and Pans Set">
+        <div class="card-body">
+          <div class="trust">⭐ 4.8 • 9,800+ reviews • Limited Offer</div>
+          <h3>CAROTE 14Pcs Pots & Pans Set</h3>
+          <p>Non-stick ceramic cookware — PFAS/PFOA free, stylish and durable.</p>
+          <div class="price-row">
+            <div><span class="badge">-53%</span> <span style="font-weight:700;">$69.98</span></div>
+            <a class="btn-primary" href="https://amzn.to/43u0Jjw" target="_blank" rel="noopener">✅ Buy Today</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card reveal" role="listitem">
+        <img loading="lazy" src="https://m.media-amazon.com/images/I/81Yzi62kDmL._SX522_.jpg" alt="Ninja K32012 Foodi Knife System">
+        <div class="card-body">
+          <div class="trust">⭐ 4.9 • 15,200+ reviews • Bestseller</div>
+          <h3>Ninja K32012 Foodi Knife System</h3>
+          <p>12-piece premium knife block set with built-in sharpener — German steel.</p>
+          <div class="price-row">
+            <div><span style="font-weight:700;">$129.99</span></div>
+            <a class="btn-primary" href="https://amzn.to/43CpmdM" target="_blank" rel="noopener">✅ Buy Today</a>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
-  <main id="main">
-    <section class="section" id="products" aria-labelledby="products-heading">
-      <h2 id="products-heading">Our Best Amazon Picks</h2>
-      <p class="section-sub">Highly-rated kitchen essentials chosen for home chefs.</p>
+  <section id="contact" class="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading" style="text-align:center">Contact Support</h2>
+    <p style="text-align:center; color:var(--muted); margin-bottom:12px;">Have a question? Send us a message and we'll reply asap.</p>
 
-      <div class="products-grid container" role="list">
-        <!-- Card 1 -->
-        <article class="card reveal" role="listitem" aria-label="Fullstar chopper">
-          <img loading="lazy" src="https://m.media-amazon.com/images/I/81GZZyozv-L._AC_SX679_.jpg" alt="Fullstar The Original Pro Chopper">
-          <div class="card-body">
-            <div class="trust">⭐ 4.7 • 12,000+ reviews • Free shipping</div>
-            <h3>Fullstar The Original Pro Chopper</h3>
-            <p>4-in-1 vegetable chopper & spiralizer — fast prep, easy clean.</p>
-            <div class="price-row">
-              <div><span class="badge">Deal</span> <span style="font-weight:700;">$19.99</span></div>
-              <a class="btn" href="https://amzn.to/4hrcbSE" target="_blank" rel="noopener">Buy on Amazon</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="card reveal" role="listitem" aria-label="Carote cookware">
-          <img loading="lazy" src="https://m.media-amazon.com/images/I/71sQ59NJRGL._AC_SX679_.jpg" alt="CAROTE 14Pcs Pots and Pans Set">
-          <div class="card-body">
-            <div class="trust">⭐ 4.8 • 9,800+ reviews • Limited Offer</div>
-            <h3>CAROTE 14Pcs Pots & Pans Set</h3>
-            <p>Non-stick ceramic cookware — PFAS/PFOA free, stylish and durable.</p>
-            <div class="price-row">
-              <div><span class="badge">-53%</span> <span style="font-weight:700;">$69.98</span></div>
-              <a class="btn" href="https://amzn.to/43u0Jjw" target="_blank" rel="noopener">Buy on Amazon</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="card reveal" role="listitem" aria-label="Ninja knife">
-          <img loading="lazy" src="https://m.media-amazon.com/images/I/81Yzi62kDmL._SX522_.jpg" alt="Ninja K32012 Foodi Knife System">
-          <div class="card-body">
-            <div class="trust">⭐ 4.9 • 15,200+ reviews • Bestseller</div>
-            <h3>Ninja K32012 Foodi Knife System</h3>
-            <p>12-piece premium knife block set with built-in sharpener — German steel.</p>
-            <div class="price-row">
-              <div><span style="font-weight:700;">$129.99</span></div>
-              <a class="btn" href="https://amzn.to/43CpmdM" target="_blank" rel="noopener">Buy on Amazon</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading" style="text-align:center">Contact Support</h2>
-      <p style="text-align:center; color:var(--muted); margin-bottom:12px;">Have a question? Send us a message and we'll reply asap.</p>
-
-      <div class="form" role="form" aria-label="Contact form">
-        <form id="contactForm" action="https://formsubmit.co/goatlamg@gmail.com" method="POST">
-          <input type="hidden" name="_captcha" value="false">
-          <input name="name" type="text" placeholder="Your name" required>
-          <input name="email" type="email" placeholder="Your email" required>
-          <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <div class="container">
-      <p>© 2025 Home Chef Picks. All rights reserved.</p>
+    <div class="form" role="form">
+      <form id="contactForm" action="https://formsubmit.co/goatlamg@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input name="name" type="text" placeholder="Your name" required>
+        <input name="email" type="email" placeholder="Your email" required>
+        <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <!-- Floating CTA -->
-  <a class="floating-cta" href="https://amzn.to/43u0Jjw" id="floatBuy" target="_blank" rel="noopener">🔥 Get Deal — CAROTE Set</a>
+<footer role="contentinfo">
+  <div class="container">
+    <p>© 2025 Home Chef Picks. All rights reserved.</p>
+    <p style="font-size:.85rem; color:#bbb;">This page contains affiliate links. We may earn a commission at no extra cost to you.</p>
+  </div>
+</footer>
 
-  <!-- Scripts: lazy hero background, parallax tweak, GA events, scroll reveal -->
-  <script>
-    (function(){
-      // 1) Lazy-load hero background (use remote Pinterest image)
-      const hero = document.querySelector('.hero');
-      const heroImg = 'https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg';
-      const img = new Image();
-      img.src = heroImg;
-      img.onload = function(){ hero.style.backgroundImage = 'url("'+heroImg+'")'; };
+<a class="floating-cta" href="https://amzn.to/43u0Jjw" id="floatBuy" target="_blank" rel="noopener">🔥 Get Deal — CAROTE Set</a>
 
-      // 2) slight parallax on scroll (subtle)
-      let lastY = 0, ticking = false;
-      function onScroll(){ lastY = window.scrollY; if(!ticking){ window.requestAnimationFrame(() => {
-          const y = lastY * 0.06; // subtle
-          hero.style.backgroundPosition = `center calc(50% + ${y}px)`;
-          ticking = false;
-      }); ticking = true; } }
-      window.addEventListener('scroll', onScroll, {passive:true});
+<script>
+(function(){
+  const hero = document.querySelector('.hero');
+  const heroImg = 'https://i.pinimg.com/736x/36/4f/a7/364fa7335037200174135bfc105d7cae.jpg';
+  const img = new Image(); img.src = heroImg; img.onload = ()=>{ hero.style.backgroundImage=`url('${heroImg}')`;}
 
-      // 3) GA event for outbound clicks (buttons to Amazon)
-      document.addEventListener('click', function(e){
-        const a = e.target.closest('a');
-        if(!a) return;
-        const href = a.getAttribute('href') || '';
-        if(href.includes('amzn.to') || href.includes('amazon.com')){
-          try {
-            gtag('event','click_buy',{ 'event_category':'outbound', 'event_label': href });
-          } catch(e){}
-        }
+  // Floating CTA after scroll
+  const floatCTA = document.getElementById('floatBuy');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY>150){ floatCTA.style.display='block'; }
+    else{ floatCTA.style.display='none'; }
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const obs = new IntersectionObserver((entries, observer)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target);}
       });
+    }, {threshold:0.12});
+    reveals.forEach(r=>obs.observe(r));
+  } else { reveals.forEach(r=>r.classList.add('show')); }
 
-      // 4) Scroll reveal using IntersectionObserver
-      const reveals = document.querySelectorAll('.reveal');
-      if('IntersectionObserver' in window){
-        const obs = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if(entry.isIntersecting){
-              entry.target.classList.add('show');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {threshold: 0.12});
-        reveals.forEach(r => obs.observe(r));
-      } else {
-        // fallback
-        reveals.forEach(r => r.classList.add('show'));
-      }
+  // Contact form UX
+  const form = document.getElementById('contactForm');
+  if(form){ form.addEventListener('submit', ()=>{ const btn=form.querySelector('button'); if(btn){ btn.disabled=true; btn.textContent='Sending...'; } }); }
 
-      // 5) simple contact UX: show sending state
-      const form = document.getElementById('contactForm');
-      if(form){
-        form.addEventListener('submit', function(){
-          const btn = form.querySelector('button[type="submit"]');
-          if(btn){ btn.disabled = true; btn.textContent = 'Sending...'; }
-        });
-      }
+})();
+</script>
 
-    })();
-  </script>
+<!-- JSON-LD Product Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"Fullstar The Original Pro Chopper",
+  "image":"https://m.media-amazon.com/images/I/81GZZyozv-L._AC_SX679_.jpg",
+  "description":"4-in-1 vegetable chopper & spiralizer — fast prep, easy clean.",
+  "brand":{"@type":"Brand","name":"Fullstar"},
+  "offers":{"@type":"Offer","url":"https://amzn.to/4hrcbSE","priceCurrency":"USD","price":"19.99","availability":"https://schema.org/InStock"}
+}
+</script>
 
-  <!-- JSON-LD basic site data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"Home Chef Picks",
-    "url":"https://kitchen-tools-shop.pages.dev",
-    "potentialAction": {
-      "@type":"SearchAction",
-      "target":"https://kitchen-tools-shop.pages.dev/?s={search_term_string}",
-      "query-input":"required name=search_term_string"
-    }
-  }
-  </script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"CAROTE 14Pcs Pots & Pans Set",
+  "image":"https://m.media-amazon.com/images/I/71sQ59NJRGL._AC_SX679_.jpg",
+  "description":"Non-stick ceramic cookware — PFAS/PFOA free, stylish and durable.",
+  "brand":{"@type":"Brand","name":"CAROTE"},
+  "offers":{"@type":"Offer","url":"https://amzn.to/43u0Jjw","priceCurrency":"USD","price":"69.98","availability":"https://schema.org/InStock"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"Ninja K32012 Foodi Knife System",
+  "image":"https://m.media-amazon.com/images/I/81Yzi62kDmL._SX522_.jpg",
+  "description":"12-piece premium knife block set with built-in sharpener — German steel.",
+  "brand":{"@type":"Brand","name":"Ninja"},
+  "offers":{"@type":"Offer","url":"https://amzn.to/43CpmdM","priceCurrency":"USD","price":"129.99","availability":"https://schema.org/InStock"}
+}
+</script>
 
 </body>
 </html>
